@@ -16,6 +16,7 @@ def write_order_to_json(item, quantity, price, buyer, date):
         'buyer': buyer,
         'date': date,
     }
+    # мы не перезаписываем, а добавляем заказ к списку более ранних
     old_orders.append(new_order)
     dict_to_json = {'orders': old_orders}
     with open('orders.json', 'w') as f_n:
