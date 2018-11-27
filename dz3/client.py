@@ -2,9 +2,9 @@ import sys
 import time
 
 from socket import socket, AF_INET, SOCK_STREAM
-from errors import *
-from jim.config import *
-from jim.utils import send_message, get_message
+from dz3.errors import *
+from dz3.jim.config import *
+from dz3.jim.utils import send_message, get_message
 
 
 def create_message(account_name=DEFAULT_ACCOUNT_NAME):

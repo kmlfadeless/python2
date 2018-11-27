@@ -1,8 +1,8 @@
 import sys
 import json
 from socket import socket, AF_INET, SOCK_STREAM
-from jim.utils import get_message, send_message
-from jim.config import *
+from dz3.jim.utils import get_message, send_message
+from dz3.jim.config import *
 
 
 def message_response(message):
