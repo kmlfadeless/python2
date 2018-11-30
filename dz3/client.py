@@ -35,7 +35,7 @@ def translate_message(response):
     return response
 
 
-if __name__ == '__main__':
+def main():
     client = socket(AF_INET, SOCK_STREAM)
     try:
         addr = sys.argv[1]
@@ -47,6 +47,7 @@ if __name__ == '__main__':
         port = 7777
     except ValueError:
         print('Port should be an integer number')
+        client.close()
         sys.exit(0)
     client.connect((addr, port))
     message = create_message()
@@ -54,5 +55,10 @@ if __name__ == '__main__':
     response = get_message(client)
     response = translate_message(response)
     print(response)
+    client.close()
+
+
+if __name__ == '__main__':
+    main()
 
 
