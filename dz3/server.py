@@ -1,6 +1,5 @@
 import sys
-import json
-from socket import socket, AF_INET, SOCK_STREAM
+from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 from dz3.jim.utils import get_message, send_message
 from dz3.jim.config import *
 
@@ -12,7 +11,9 @@ def message_response(message):
         return {RESPONSE: 400, ERROR: 'Incorrect request'}
 
 
-if __name__ == '__main__':
+def main():
+    global server
+    global client
     server = socket(AF_INET, SOCK_STREAM)
     try:
         addr = sys.argv[1]
@@ -27,6 +28,8 @@ if __name__ == '__main__':
         print('Port should be an integer number')
         sys.exit(0)
 
+    # no conflicts if you rerun it
+    server.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     server.bind((addr, port))
     server.listen(1)
     while True:
@@ -36,4 +39,8 @@ if __name__ == '__main__':
         response = message_response(message)
         send_message(client, response)
         client.close()
+
+
+if __name__ == '__main__':
+    main()
 
