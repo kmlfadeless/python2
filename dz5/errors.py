@@ -1,4 +1,4 @@
-class UsernameToLongError(Exception):
+class UsernameTooLongError(Exception):
     def __init__(self, username):
         self.username = username
 
