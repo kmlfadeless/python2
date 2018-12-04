@@ -1,0 +1,12 @@
+2018-12-03 02:14:21,417 WARNING client Server address is empty, using localhost 
+2018-12-03 02:14:21,418 WARNING client Server port is empty, using 7777 
+2018-12-03 02:14:21,418 DEBUG client Starting connection... 
+2018-12-03 02:14:21,428 DEBUG client Sending message... 
+2018-12-03 02:14:21,429 DEBUG client Waiting for response... 
+2018-12-03 02:14:21,430 INFO client Response: {'response': 200} 
+2018-12-03 02:14:21,431 WARNING client create_message Username Too Long Error 
+2018-12-03 02:14:21,431 WARNING client create_message Type Error 
+2018-12-03 02:14:21,434 ERROR client translate_message Mandatory Key Error 
+2018-12-03 02:14:21,440 ERROR client translate_message Type error 
+2018-12-03 02:14:21,444 ERROR client translate_message Response Code Length Error 
+2018-12-03 02:14:21,450 ERROR client translate_message Response code error 
